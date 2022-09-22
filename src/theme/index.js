@@ -42,11 +42,7 @@ const theme = {
     font-size: ${theme.textStyles[style].fontSize};
     font-weight: ${theme.textStyles[style].fontWeight};
     line-height: ${theme.textStyles[style].lineHeight};
-    ${
-      theme.textStyles[style].textDecoration
-        ? `text-decoration: ${theme.textStyles[style].textDecoration};`
-        : ''
-    }
+    ${theme.textStyles[style].textDecoration ? `text-decoration: ${theme.textStyles[style].textDecoration};` : ''}
     font-family: Open Sans,sans-serif;
   `,
 }
