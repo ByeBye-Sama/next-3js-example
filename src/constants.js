@@ -1,3 +1,4 @@
 export const routesPath = {
-  HOME: '/home',
+  HOME: '/',
+  THREE_JS: '/three-js',
 }

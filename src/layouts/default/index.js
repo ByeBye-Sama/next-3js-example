@@ -8,8 +8,9 @@ export const Main = styled.main`
   background-color: ${theme.colors.black};
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 64px);
   justify-content: center;
+  padding: ${theme.spacing(4)};
 
   > :not(:last-child) {
     margin-bottom: ${theme.spacing(2)};
@@ -21,7 +22,7 @@ const DefaultLayout = props => {
 
   return (
     <Main id="main">
-      <Text color="white" textStyle="h2">
+      <Text color="white" textStyle="title">
         Boilerplate by KayPacha
       </Text>
       {children}

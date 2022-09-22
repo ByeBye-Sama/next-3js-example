@@ -7,11 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "npx eslint src/",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
-    "storybook:deploy": "surge ./storybook-static -d ${GITHUB_REPOSITORY#*/}-${GITHUB_HEAD_REF}.surge.sh --token $SURGE_TOKEN"
+    "lint": "npx eslint src/"
   },
   "repository": {
     "type": "git",
@@ -24,19 +20,19 @@
   },
   "homepage": "https://github.com/kaypacha/next-boilerplate#readme",
   "dependencies": {
+    "@react-three/drei": "^9.8.1",
+    "@react-three/fiber": "^8.0.14",
+    "i18next": "^21.6.16",
+    "i18next-browser-languagedetector": "^6.1.4",
     "lodash": "^4.17.21",
     "next": "^12.1.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "styled-components": "^5.3.3"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-i18next": "^11.16.7",
+    "styled-components": "^5.3.3",
+    "three": "^0.140.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.4.9",
-    "@storybook/addon-essentials": "^6.4.9",
-    "@storybook/addon-links": "^6.4.9",
-    "@storybook/react": "^6.4.9",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
     "eslint": "^8.10.0",
     "eslint-config-next": "^12.1.6",
     "eslint-config-prettier": "^8.3.0",
@@ -46,14 +42,13 @@
     "husky": "^4.3.8",
     "jest": "^27.4.5",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.2",
-    "react-test-renderer": "^17.0.2",
-    "surge": "^0.23.0"
+    "prettier": "^2.3.2"
   },
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "arrowParens": "avoid"
+    "arrowParens": "avoid",
+    "printWidth": 120
   },
   "eslintConfig": {
     "env": {
@@ -71,8 +66,8 @@
       "no-unused-vars": 1,
       "react/prop-types": "off",
       "react/self-closing-comp": "error",
-      "no-var": "error",
-      "import/no-anonymous-default-export": "off"
+      "@next/next/no-img-element": "off",
+      "no-var": "error"
     },
     "parserOptions": {
       "sourceType": "module",
@@ -86,8 +81,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "jest --bail --findRelatedTests --coverage --env=jsdom"
+      "eslint --fix"
     ]
   }
 }
